@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sts.demodemo.dao.PlaneMapper">
+
+    <select id="findAllPlane" resultType="Plane">
+        select * from tb_plane
+    </select>
+
+    <select id="findAllPlaneByL_place_id" parameterType="Integer" resultType="Plane">
+        select * from tb_plane where l_place_id = #{l_place_id}
+    </select>
+
+
+</mapper>

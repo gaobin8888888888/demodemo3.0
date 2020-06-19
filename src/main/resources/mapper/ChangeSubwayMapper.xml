@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sts.demodemo.dao.ChangeSubwayMapper">
+
+    <select id="findAllChange" resultType="ChangeSubway">
+        select * from tb_change
+    </select>
+
+    <select id="findAllChangeByPlace" parameterType="ChangeSubway" resultType="ChangeSubway">
+        select * from tb_change where c_place = #{c_place}
+    </select>
+
+    <select id="findAllChangeByLastAndNowAndPlace" parameterType="ChangeSubway" resultType="ChangeSubway">
+        select * from tb_change where c_last_sid = #{c_last_sid} and c_now_sid = #{c_now_sid} and c_place = #{c_place}
+    </select>
+
+    <select id="findAllChangeByStartPlace" parameterType="String" resultType="ChangeSubway">
+        select distinct *
+        from tb_change t1, tb_subway t2
+        where t1.c_last_sid = t2.s_sid and t2.s_belong_place = #{s_belong_place}
+    </select>
+
+</mapper>

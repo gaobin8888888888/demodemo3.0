@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sts.demodemo.dao.SubwayMapper">
+
+    <select id="findAllSubway" resultType="Subway">
+        select * from tb_subway
+    </select>
+
+    <select id="findAllSubwayByS_sid" parameterType="Integer" resultType="Subway">
+        select * from tb_subway where s_sid = #{s_sid}
+    </select>
+
+    <select id="findSubwayByS_place" parameterType="String" resultType="Subway">
+        select * from tb_subway where s_place = #{s_place}
+    </select>
+    
+    <select id="findStartSubwayByDim" parameterType="String" resultType="Subway">
+        select *
+        from tb_subway
+        where s_place like #{s_place}
+    </select>
+
+    <select id="findAllSubwaysByS_belong_place" parameterType="String" resultType="Subway">
+        select *
+        from tb_subway
+        where s_belong_place=#{s_belong_place}
+    </select>
+
+
+</mapper>
