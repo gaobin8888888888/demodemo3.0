@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sts.demodemo.dao.TrafficMapper">
 
-    <select id="findAllTraffic" resultType="Traffic">
+    <select id="findAllTraffic" resultType="com.sts.demodemo.entity.Traffic">
         select * from tb_traffic
     </select>
 
-    <select id="findAllTrafficByStartAndEnd" parameterType="Traffic" resultType="Traffic">
+    <select id="findAllTrafficByStartAndEnd" parameterType="com.sts.demodemo.entity.Traffic" resultType="com.sts.demodemo.entity.Traffic">
         select * from tb_traffic where t_start_place=#{t_start_place} and t_end_place=#{t_end_place}
     </select>
 

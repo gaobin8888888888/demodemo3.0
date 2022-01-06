@@ -2,23 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sts.demodemo.dao.StartEndPlaceMapper">
 
-    <select id="findOneStartEndPlace" parameterType="StartEndPlace" resultType="StartEndPlace">
+    <select id="findOneStartEndPlace" parameterType="StartEndPlace" resultType="com.sts.demodemo.entity.StartEndPlace">
         select * from tb_startendplace where p_start = #{p_start} and p_end = #{p_end}
     </select>
 
-    <select id="findAllStartEndPlace" resultType="StartEndPlace">
+    <select id="findAllStartEndPlace" resultType="com.sts.demodemo.entity.StartEndPlace">
         select * from tb_startendplace
     </select>
 
-    <select id="findAllStartEndPlaceByP_start" parameterType="String" resultType="StartEndPlace">
+    <select id="findAllStartEndPlaceByP_start" parameterType="String" resultType="com.sts.demodemo.entity.StartEndPlace">
         select * from tb_startendplace where p_start = #{p_start}
     </select>
 
-    <select id="findAllStartEndPlaceByP_end" parameterType="String" resultType="StartEndPlace">
+    <select id="findAllStartEndPlaceByP_end" parameterType="String" resultType="com.sts.demodemo.entity.StartEndPlace">
         select * from tb_startendplace where p_end = #{p_end}
     </select>
 
-    <select id="findAllStartEndPlacesByP_startOrP_end" parameterType="StartEndPlace" resultType="StartEndPlace">
+    <select id="findAllStartEndPlacesByP_startOrP_end" parameterType="com.sts.demodemo.entity.StartEndPlace" resultType="com.sts.demodemo.entity.StartEndPlace">
         select * from tb_startendplace where p_start = #{p_start} or p_end = #{p_end}
     </select>
 

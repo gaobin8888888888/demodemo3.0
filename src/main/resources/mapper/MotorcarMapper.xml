@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sts.demodemo.dao.MotorcarMapper">
 
-    <select id="findAllMotorcar" resultType="Motorcar">
+    <select id="findAllMotorcar" resultType="com.sts.demodemo.entity.Motorcar">
         select * from tb_motorcar
     </select>
 
-    <select id="findAllMotorcarByM_place_id" parameterType="Integer" resultType="Motorcar">
+    <select id="findAllMotorcarByM_place_id" parameterType="Integer" resultType="com.sts.demodemo.entity.Motorcar">
         select * from tb_motorcar where m_place_id = #{m_place_id}
     </select>
 

@@ -1,4 +1,4 @@
-package com.sts.demodemo.util;
+package com.sts.demodemo.conf;
 
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
